@@ -77,8 +77,13 @@ console.log(divisor(10));
 //cho ra 1 số nhỏ nhất có thể (không tính số 0 đầu tiên). Ví dụ với tham số 53751 thì kết quả là 13557.
 
 function arrange1(arr) {
-    for(let i = 1; i<arr.length;i++){
+    let result =[]
+    for(let i = 0; i<arr.length;i++){
         arr[i]=parseInt(arr[i],10)
+        if(arr[i]==0){
+            console.log(arr[i]);
+            result.push(arr[i])
+        }
         let current = arr[i]
         let j = i-1;
         while(j>=0&& arr[j]>current){
@@ -86,7 +91,9 @@ function arrange1(arr) {
             j--
         }
         arr[j+1]=current
+        
     }
-    return arr.join(' ')
+    arr.shift()
+    return [...arr,...result]
 }
-console.log(arrange1(['1', '0', '2', '9', '8', '7', '86', '5', '4', '3', '2', '1']));
+console.log(arrange1(['18', '0', '2', '9', '8', '7', '86', '5', '4', '3', '2', '19']));
