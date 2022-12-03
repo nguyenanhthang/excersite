@@ -47,7 +47,7 @@ console.log(copString2('a'))
 function syntaxString(s) {
     var result = '';
     for(let i = 0; i < 10; i++){
-        result += `${s}-`
+        result += `${s}`
     }
     return result.slice(0,-1);
 }
@@ -60,7 +60,7 @@ function countString(input,n){
     for(let i=0 ; i < n ;i++){
         countResult += `${input}-`
     }
-    return countResult.slice(0,-1);
+    return countResult.slice(0,countResult.length-1);
 }
 console.log(countString('a',6))
 
@@ -84,3 +84,17 @@ function CheckString(string) {
     return string === string.toUpperCase();
 }
 console.log(CheckString("AA"))
+function capitalizeString(input){ 
+    let toLower = input.toLowerCase().split(' ')
+    console.log(toLower);
+    let sort = toLower.map((n,index)=>{
+    if(index==4){
+        console.log(index);
+        return n.toUpperCase()
+    }
+    return n.replace(n.charAt(0),n.charAt(0).toUpperCase())
+    }
+    )
+    return sort.join(' ')
+}
+console.log(capitalizeString('chAo MunG dEn voi aMela'))

@@ -51,6 +51,7 @@ function soNguyenTo1(n) {
                     result = false;
                     break;
                 }
+                result = true
             }
         }
         if (result == true) {
@@ -59,7 +60,7 @@ function soNguyenTo1(n) {
     }
     return sum;
 }
-console.log(soNguyenTo1(13));
+console.log(soNguyenTo1(9));
 
 // Bài 5: Cho 1 số nguyên dương, viết hàm tính tổng tất cả các ước số của số đó.
 function divisor(n) {
@@ -81,8 +82,8 @@ function arrange1(arr) {
     for(let i = 0; i<arr.length;i++){
         arr[i]=parseInt(arr[i],10)
         if(arr[i]==0){
-            console.log(arr[i]);
             result.push(arr[i])
+            arr.shift()
         }
         let current = arr[i]
         let j = i-1;
@@ -91,9 +92,8 @@ function arrange1(arr) {
             j--
         }
         arr[j+1]=current
-        
     }
     arr.shift()
-    return [...arr,...result]
+    return [...arr,...result].join(' ')
 }
-console.log(arrange1(['18', '0', '2', '9', '8', '7', '86', '5', '4', '3', '2', '19']));
+console.log(arrange1(['18', '0', '2', '9', '8', '7', '86', '5', '4', '3', '2', '19','0']));
