@@ -26,7 +26,7 @@ function max2Numbers(k) {
     k.sort((a, b) => a - b);
     return k[k.length - 2];
 }
-console.log(max2Numbers([2, 1, 3, 4]));
+console.log(max2Numbers([2, 1, 3, 4,4,3,3]));
 
 // Bài 3. Viết hàm truyền vào 1 mảng tên học viên, sắp xếp lại mảng này theo chiều ngược của bảng chữ cái. Ví dụ:
 // sortStudents(['Nam', 'Hoa', 'Tuấn']) => Kết quả trả về là ['Tuấn', 'Nam', 'Hoa']
